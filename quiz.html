@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quizzes - SuccessTutorALevel</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Quizzes</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="subjects.html">Subjects</a>
+      <a href="tips.html">Learning Tips</a>
+      <a href="blog.html">Blog</a>
+      <a href="quiz.html">Quizzes</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Physics Quiz Example</h2>
+    <form id="physics-quiz">
+      <label>What is Newton's Second Law?<br>
+        <input type="text" name="q1">
+      </label>
+      <button type="button" onclick="checkPhysicsQuiz()">Submit</button>
+    </form>
+    <p id="quiz-result"></p>
+  </main>
+  <script>
+    function checkPhysicsQuiz() {
+      let answer = document.querySelector('input[name="q1"]').value.trim().toLowerCase();
+      let result = document.getElementById('quiz-result');
+      if(answer.includes('force') && answer.includes('mass') && answer.includes('acceleration')) {
+        result.textContent = 'Correct! F = ma';
+      } else {
+        result.textContent = 'Try again! Newton\'s Second Law is F = ma';
+      }
+    }
+  </script>
+  <footer>
+    &copy; 2025 SuccessTutorALevel
+  </footer>
+</body>
+</html>
